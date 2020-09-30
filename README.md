@@ -82,5 +82,19 @@ Type the following command:
 
 ![alt text](./images/dashboard-binding.png)
 
+Now we can see that our Pods health is visible on the WebUI
+
 ![alt text](./images/WebUI-dashboard-access-on.png)
+
+## Gracefully Shutting Down Pods and Cluster
+
+There are tons of blog posts about tearing down onpremise clusters by cleaning up everything, and some answers about shutting down nodes in public clouds (so that if your provider doesn't charge for the master, you're as good as in a poweroff state), nothing about properly shutting down an on-premise cluster like ours. The general answer is "it's fine."
+
+To stop your cluster, run:
+
+	minikube stop
+
+then you need to clear minikube's local state:
+
+	minikube delete
 
