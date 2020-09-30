@@ -20,9 +20,7 @@ This exam curriculum includes these general domains and their weights on the exa
 
 Kubernetes (K8s) is an open-source system for automating deployment, scaling, and management of containerized applications. It groups containers that make up an application into logical units for easy management and discovery. 
 
-Creates a proxy server or application-level gateway between localhost and the Kubernetes API Server. It also allows serving static content over specified HTTP path. All incoming data enters through one port and gets forwarded to the remote kubernetes API Server port, except for the path matching the static content path. Then you can explore the API with curl, wget, or a browser, like so:
-
-	curl http://localhost:8080/api/ 	
+## Set up Minikube
 
 Minikube is an open source tool that enables you to run Kubernetes on your laptop or other local machine. It can work with Linux, Mac, and Windows operating systems. It runs a single-node cluster inside a virtual machine on your local machine.
 
@@ -42,6 +40,8 @@ Once minikube start finishes, run the command below to check the status of the c
 
 ![alt text](./images/minikube-status.png)
 
+## Create our Pods
+
 To start a Kubernetes cluster type following command:
 
 	kubectl create -f pod-definition.yml
@@ -53,6 +53,8 @@ To check all the pods and their health type the following command:
 	kubectl get pods
 
 ![alt text](./images/get-pod.png)
+
+## Set up Kubernetes Dashboard
 
 You can use Dashboard to get an overview of applications running on your cluster, as well as for creating or modifying individual Kubernetes resources (such as Deployments, Jobs, DaemonSets, etc)
 
@@ -71,4 +73,14 @@ There are two options to authenticate our Kubernetes dashboard account; using ei
 When you access Dashboard on an empty cluster, you'll see the welcome page. This page contains a link to this document as well as a button to deploy your first application. Dashboard lets you create and deploy a containerized application as a Deployment and optional Service with a simple wizard. 
 
 ![alt text](./images/WebUI-dashboard.png)
+
+You  need to bind the dashboard service account to the cluster admin role, otherwise, the dashboard services account doesn't have access to the data that would populate the dashboard.
+
+Type the following command: 
+
+	kubectl create clusterrolebinding dashboard-admin-sa --clusterrole=cluster-admin --serviceaccount=default:dashboard-admin-sa
+
+![alt text](./images/dashboard-binding.png)
+
+![alt text](./images/WebUI-dashboard-access-on.png)
 
