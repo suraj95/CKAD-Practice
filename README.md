@@ -46,10 +46,15 @@ Once minikube start finishes, run the command below to check the status of the c
 
 ![alt text](./images/minikube-status.png)
 
-To start a Kubernetes cluster type following command
+To start a Kubernetes cluster type following command:
 
 	kubectl create -f pod-definition.yml
 
 ![alt text](./images/pod-created.png)
 
+To check all the pods and their health type the following command:
+
+	kubectl get pods
+
+![alt text](./images/get-pod.png)
 
