@@ -20,10 +20,6 @@ This exam curriculum includes these general domains and their weights on the exa
 
 Kubernetes (K8s) is an open-source system for automating deployment, scaling, and management of containerized applications. It groups containers that make up an application into logical units for easy management and discovery. 
 
-The following command runs kubectl in a mode where it acts as a reverse proxy. 
-
-	kubectl proxy --port=8080 &
-
 Creates a proxy server or application-level gateway between localhost and the Kubernetes API Server. It also allows serving static content over specified HTTP path. All incoming data enters through one port and gets forwarded to the remote kubernetes API Server port, except for the path matching the static content path. Then you can explore the API with curl, wget, or a browser, like so:
 
 	curl http://localhost:8080/api/ 	
@@ -57,4 +53,22 @@ To check all the pods and their health type the following command:
 	kubectl get pods
 
 ![alt text](./images/get-pod.png)
+
+You can use Dashboard to get an overview of applications running on your cluster, as well as for creating or modifying individual Kubernetes resources (such as Deployments, Jobs, DaemonSets, etc)
+
+The Dashboard UI is not deployed by default. To deploy it, run the following command:
+
+	kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml
+
+You can access Dashboard using the kubectl command-line tool by running the following command:
+
+	kubectl proxy 
+
+![alt text](./images/dashboard.png)
+
+There are two options to authenticate our Kubernetes dashboard account; using either the token or the kubeconfig method. I used the token method given in this [blod](https://www.replex.io/blog/how-to-install-access-and-add-heapster-metrics-to-the-kubernetes-dashboard).
+
+When you access Dashboard on an empty cluster, you'll see the welcome page. This page contains a link to this document as well as a button to deploy your first application. Dashboard lets you create and deploy a containerized application as a Deployment and optional Service with a simple wizard. 
+
+![alt text](./images/WebUI-dashboard.png)
 
