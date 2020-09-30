@@ -50,6 +50,6 @@ To start a Kubernetes cluster type following command
 
 	kubectl create -f pod-definition.yml
 
-
+![alt text](./images/pod-created.png)
 
 
