@@ -68,13 +68,13 @@ You can access Dashboard using the kubectl command-line tool by running the foll
 
 ![alt text](./images/dashboard.png)
 
-There are two options to authenticate our Kubernetes dashboard account; using either the token or the kubeconfig method. I used the token method given in this [blod](https://www.replex.io/blog/how-to-install-access-and-add-heapster-metrics-to-the-kubernetes-dashboard).
+There are two options to authenticate our Kubernetes dashboard account; using either the token or the kubeconfig method. I used the token method given in this [blog](https://www.replex.io/blog/how-to-install-access-and-add-heapster-metrics-to-the-kubernetes-dashboard).
 
 When you access Dashboard on an empty cluster, you'll see the welcome page. This page contains a link to this document as well as a button to deploy your first application. Dashboard lets you create and deploy a containerized application as a Deployment and optional Service with a simple wizard. 
 
 ![alt text](./images/WebUI-dashboard.png)
 
-You  need to bind the dashboard service account to the cluster admin role, otherwise, the dashboard services account doesn't have access to the data that would populate the dashboard.
+You need to bind the dashboard service account to the cluster admin role, otherwise, the dashboard services account doesn't have access to the data that would populate the dashboard.
 
 Type the following command: 
 
