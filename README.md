@@ -46,11 +46,11 @@ To start a Kubernetes cluster from a Pod definition file, type following command
 
 	kubectl create -f pod-definition.yml
 
+![alt text](./images/pod-created.png)
+
 And to start a cluster using a Replication Controller, type following command:
 
 	kubectl create -f rc-definition.yml
-
-![alt text](./images/pod-created.png)
 
 To check all the pods and their health type the following command:
 
