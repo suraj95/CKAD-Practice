@@ -42,9 +42,13 @@ Once minikube start finishes, run the command below to check the status of the c
 
 ## Create our Pods
 
-To start a Kubernetes cluster type following command:
+To start a Kubernetes cluster from a Pod definition file, type following command:
 
 	kubectl create -f pod-definition.yml
+
+And to start a cluster using a Replication Controller, type following command:
+
+	kubectl create -f rc-definition.yml
 
 ![alt text](./images/pod-created.png)
 
