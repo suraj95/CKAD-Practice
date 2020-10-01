@@ -92,7 +92,15 @@ Now we can see that our Pods health is visible on the WebUI
 
 ## Gracefully Shutting Down Pods and Cluster
 
-There are tons of blog posts about tearing down onpremise clusters by cleaning up everything, and some answers about shutting down nodes in public clouds (so that if your provider doesn't charge for the master, you're as good as in a poweroff state), nothing about properly shutting down an on-premise cluster like ours. The general answer seems to be "it's fine." Just stop your cluster using minikube commands below and then manually terminate the running kubectl processes.
+There are tons of blog posts about tearing down onpremise clusters by cleaning up everything, and some answers about shutting down nodes in public clouds (so that if your provider doesn't charge for the master, you're as good as in a poweroff state), nothing about properly shutting down an on-premise cluster like ours. The general answer seems to be "it's fine." Just stop your cluster using minikube commands below and then manually terminate the running kubectl processes if any are left.
+
+To delete Pods, run: 
+
+	kubectl delete pods <pod1-name> <pod2-name>
+
+To delete Replication Controller, run:
+
+	kubectl delete replicationcontrollers <rc1-name> <rc21-name>
 
 To stop your cluster, run:
 
