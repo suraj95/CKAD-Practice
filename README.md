@@ -74,7 +74,7 @@ The Deployment automatically creates a Replicaset, which can be viewed by the fo
 
 	kubectl get replicaset
 
-![alt text](./images/deployment-pod-rs.png)
+![alt text](./images/deployment-pods-rs.png)
 
 ## Set up Kubernetes Dashboard
 
