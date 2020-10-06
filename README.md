@@ -58,6 +58,24 @@ To check all the pods and their health type the following command:
 
 ![alt text](./images/get-pod.png)
 
+## Create our Deployment
+
+To start a Kubernetes cluster from a Deployment definition file, type following command:
+
+	kubectl create -f deployment-definition.yml
+
+![alt text](./images/deployment-created.png)
+
+To check all the deployments and their health type the following command:
+
+	kubectl get deployments
+
+The Deployment automatically creates a Replicaset, which can be viewed by the following command:
+
+	kubectl get replicaset
+
+![alt text](./images/deployment-pod-rs.png)
+
 ## Set up Kubernetes Dashboard
 
 You can use Dashboard to get an overview of applications running on your cluster, as well as for creating or modifying individual Kubernetes resources (such as Deployments, Jobs, DaemonSets, etc)
