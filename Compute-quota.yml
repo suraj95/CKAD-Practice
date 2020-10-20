@@ -11,5 +11,5 @@ spec:
   limits.cpu: "10"
   limits.memory: 10Gi
 
-# The key difference between the replica set and the replication controller is, the replication controller 
-# only supports equality-based selector whereas the replica set supports set-based selector.
+# The key difference between replica set and replication controller is that replication controller 
+# only supports equality-based selector whereas replica set supports set-based selector.
