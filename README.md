@@ -118,7 +118,7 @@ To delete individual Pods, run:
 
 To delete Replication Controller (also deletes the underlying Pods) , run:
 
-	kubectl delete replicationcontrollers <rc1-name> <rc21-name>
+	kubectl delete replicationcontrollers <rc1-name> <rc2-name>
 
 To stop your cluster, run:
 
