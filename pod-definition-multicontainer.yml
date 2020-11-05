@@ -10,7 +10,7 @@ spec:
     image: simple-webapp
     ports:
       - containerPort: 8080
-
+                     # The - sign represents an array in YAML.
   - name: log-agent
     image: log-agent
 
