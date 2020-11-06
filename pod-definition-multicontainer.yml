@@ -5,12 +5,12 @@ metadata:
  labels:
   name: simple-webapp
 spec:
- containers:
+ containers: # The - sign represents an array in YAML (because we can have multiple containers)
   - name: simple-webapp
     image: simple-webapp
     ports:
       - containerPort: 8080
-                     # The - sign represents an array in YAML.
+                     
   - name: log-agent
     image: log-agent
 
