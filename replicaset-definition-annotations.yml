@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+ name: simple-webapp
+ labels:
+  app: App1
+  function: Front-end
+ annotations:
+  buildversion: 1.34
+
+spec:
+ replicas: 3
+ selector:
+  matchLabels:
+   type: App1
+
+ template: 
+  metadata:
+   labels:
+    app: App1
+    function: Front-end
+  spec:
+   containers:
+    - name: simple-webapp
+      image: simple-webapp
+ 
+# The key difference between the replica set and the replication controller is that replication controller 
+# only supports equality-based selector whereas replica set supports set-based selector.
