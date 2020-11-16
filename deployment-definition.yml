@@ -18,9 +18,12 @@ spec:
   spec:
    containers:
     - name: nginx-container
-      image: nginx
+      image: nginx:1.7.1    # use nginx:1.7.1 when deploying for first time 
 
  replicas: 3
  selector:
   matchLabels:
     type: front-end
+
+# For rolling upgrade, type the following command-- 
+# kubectl set image deployment myapp-development nginx-container=nginx:1.9.1
