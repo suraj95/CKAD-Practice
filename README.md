@@ -130,7 +130,7 @@ To delete ReplicaSets (also deletes the underlying Pods) , run:
 
 	kubectl delete replicasets <rs1-name> <rs2-name>
 
-To delete Deployments(also deletes the underlying Replicasets and Pods) , run:
+To delete Deployments (also deletes the underlying Replicasets and Pods) , run:
 
 	kubectl delete deployments <myapp-deployment1> <myapp-deployment2>
 
