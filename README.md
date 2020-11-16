@@ -48,9 +48,15 @@ To start a Kubernetes cluster from a Pod definition file, type following command
 
 ![alt text](./images/pod-created.png)
 
+It is important to know that there are two similar terms— Replication Controller and Replica Set. Both have the same purpose, but they are not the same. **Replication Controller is the older technology that is being replaced by Replica Set, which is the new recommend way to set up our application.** 
+
 And to start a cluster using a Replication Controller, type following command:
 
-	kubectl create -f rc-definition.yml
+	kubectl create -f rc-definition.
+
+And to start a cluster using a ReplicaSet (we will stick to this from now), type following command:
+
+	kubectl create -f replicaset-definition.yml
 
 To check all the pods and their health type the following command:
 
@@ -75,6 +81,10 @@ The Deployment automatically creates a Replicaset, which can be viewed by the fo
 	kubectl get replicaset
 
 ![alt text](./images/deployment-pods-rs.png)
+
+And for rolling upgrade (for example, update nginx-container image from nginx:1.7.1 to nginx:1.9.1), type the following command:
+
+	kubectl set image deployment myapp-deployment nginx-container=nginx:1.9.1
 
 ## Set up Kubernetes Dashboard
 
@@ -116,9 +126,13 @@ To delete individual Pods, run:
 
 	kubectl delete pods <pod1-name> <pod2-name>
 
-To delete Replication Controller (also deletes the underlying Pods) , run:
+To delete ReplicaSets (also deletes the underlying Pods) , run:
 
-	kubectl delete replicationcontrollers <rc1-name> <rc2-name>
+	kubectl delete replicasets <rs1-name> <rs2-name>
+
+To delete Deployments(also deletes the underlying Replicasets and Pods) , run:
+
+	kubectl delete deployments <myapp-deployment1> <myapp-deployment2>
 
 To stop your cluster, run:
 
