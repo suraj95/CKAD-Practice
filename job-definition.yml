@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+ name: reporting-job
+spec:
+ completions: 3
+ parallelism: 3
+ template:
+  spec:
+   containers:
+    - name: reporting-tool
+      image: reporting-tool
+
+   restartPolicy: Never
+
+ 
