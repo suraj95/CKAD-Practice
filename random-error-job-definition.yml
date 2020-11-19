@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+ name: random-error-job
+spec:
+ completions: 3
+ parallelism: 3 
+ template:
+  spec:
+   containers:
+    - name: random-error
+      image: kodekloud/random-error
+
+   restartPolicy: Never
+ 
+# Parallelism property enables us to create Pods in parallel 
+# rather than each one waiting for the earlier one to complete
