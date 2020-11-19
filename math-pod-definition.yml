@@ -7,4 +7,8 @@ spec:
   - name: math-add
     image: ubuntu
     command: ['expr','3','+','2']
- 
+
+ restartPolicy: Never 
+
+ # "Always" is the default property by which the Pod always recreates the container when it exits
+ # We can override this default behavior and set it to "Never"
