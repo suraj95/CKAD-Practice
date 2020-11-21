@@ -3,18 +3,18 @@ kind: CronJob
 metadata:
  name: reporting-cron-job
 spec:
- schedule: "*/1 * * *"
+ schedule: "*/1 * * * *"
  jobTemplate:
   spec:
    completions: 3
    parallelism: 3
-    template:
-     spec:
-      containers:
-       - name: reporting-tool
-         image: reporting-tool
+   template:
+    spec:
+     containers:
+      - name: reporting-tool
+        image: reporting-tool
 
-      restartPolicy: Never
+     restartPolicy: Never
 
 
 # ┌───────────── minute (0 - 59)
