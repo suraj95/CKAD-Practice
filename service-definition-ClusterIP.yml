@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Service
 metadata:
- name: myapp-service
+ name: back-end
 spec:
- type: NodePort
+ type: ClusterIP
  ports:
   - targetPort: 80
     port: 80
     nodePort: 30008
  selector:
   app: myapp
-  type: front-end
+  type: back-end
 
 # The targetPort specifies the port to which the Service is to be attached.
 # And the labels in selector are then used to identify the Pod with that targetPort. 
