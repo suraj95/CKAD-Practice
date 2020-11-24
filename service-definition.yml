@@ -10,3 +10,6 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 9376
+
+# This is just a sample Service definition file used in the animations 
+# demonstrating the use of Selectors and Annotators.
