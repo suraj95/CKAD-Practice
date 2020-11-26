@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+ name: db-policy
+
+spec:
+ podSelector:
+  matchLabels:
+   role: db
+
+policyTypes:
+ - Ingress
+ingress:
+ - from:
+  - podSelector:
+     matchLabels:
+      name: api-pod
+
+   ports:
+    - protocol: TCP
+      port: 3306
+
+# Ingress refers to the right to enter a property, 
+# while egress refers to the right to exit a property.
