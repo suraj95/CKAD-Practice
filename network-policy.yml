@@ -20,5 +20,5 @@ ingress:
     - protocol: TCP
       port: 3306
 
-# Ingress refers to the right to enter a property, 
-# while egress refers to the right to exit a property.
+# Ingress refers to the traffic that is entering a Pod, 
+# while Egress refers to the traffic that is exiting a Pod.
