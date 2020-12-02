@@ -12,13 +12,12 @@ policyTypes:
  - Ingress
 ingress:
  - from:
-  - podSelector:
-     matchLabels:
-      name: api-pod
-
-   ports:
-    - protocol: TCP
-      port: 3306
+ - podSelector:
+    matchLabels:
+     name: api-pod
+ ports:
+  - protocol: TCP
+    port: 3306
 
 # Ingress refers to the traffic that is entering a Pod, 
 # while Egress refers to the traffic that is exiting a Pod.
