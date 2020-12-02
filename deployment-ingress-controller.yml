@@ -35,3 +35,10 @@ spec:
       containerPort: 80
     - name: https
       containerPort: 443
+
+# When I tried running this Deployment in my system using minikube, 
+# it didnt work because in Kubernetes 1.16 some APIs have been changed.
+# Only apiVersion with apps is correct for Deployments (extensions is 
+# not supporting Deployment).
+#
+# Link:- https://stackoverflow.com/questions/58481850/no-matches-for-kind-deployment-in-version-extensions-v1beta1
