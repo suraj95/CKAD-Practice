@@ -11,3 +11,9 @@ spec:
   path: /tmp/data
   
  
+# You can replace hostPath with a configuration for a specific Storage 
+# Solution like awsElasticBlockStorage in the following snippet-
+
+# awsElasticBlockStore:
+#  volumeID: <volume-id>
+#  fsType: ext4
