@@ -9,5 +9,7 @@ spec:
   requests:
    storage: 500Mi
 
-  
- 
+# Persistent volumes are long-term storage in your Kubernetes cluster. 
+# Persistent volumes exist beyond containers, pods, and nodes. 
+# A Pod uses a Persistent Volume claim to to get read and write access 
+# to the Persistent Volume.
