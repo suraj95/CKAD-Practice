@@ -21,6 +21,11 @@ spec:
    app: mysql
  
  serviceName: mysql-h
- podManagementPolicy: parallel
+ podManagementPolicy: parallel # default value is OrderedReady
+
+
+ 
+
+
 
  
