@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+ name: myapp-deployment
+ labels:
+  app: myapp
+  type: front-end
+
+spec:
+ serviceName: mysql-h # to identify which Headless Service
+ replicas: 3
+ matchLabels:
+  app: mysql
+ template:
+  metadata:
+   name: myapp-pod
+   labels:
+    app: mysql
+  spec:
+   containers:
+    - name: mysql
+      image: mysql
+
+# No need to specify a subdomain or hostname here (unlike Deployment). The 
+# StatefulSet automatically assigns the right hostname for each Pod based on
+# the Pod name, and it automatically assigns the right subdomain based on 
+# the Headless service name. 
+
+# The Pod names will be created as follows:
+#   mysql-0.mysql-h.default.svc.cluster.local
+#   mysql-1.mysql-h.default.svc.cluster.local
+#   mysql-2.mysql-h.default.svc.cluster.local
+
+ 
+
