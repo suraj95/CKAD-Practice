@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: myapp-deployment
+ labels:
+  app: myapp
+  type: front-end
+
+spec:
+ replicas: 3
+ matchLabels:
+  app: mysql
+ template:
+  metadata:
+   name: myapp-pod
+   labels:
+    app: mysql
+  spec:
+   containers:
+    - name: mysql
+      image: mysql
+   subdomain: mysql-h
+   hostname: mysql-pod
+
+# The hostname and subdomain are essential to bind to the headless service
+
+# The DNS records will be created of the following form:
+# mysql-pod.mysql-h.default.svc.cluster.local
+
