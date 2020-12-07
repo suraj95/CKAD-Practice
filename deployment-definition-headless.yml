@@ -25,5 +25,13 @@ spec:
 # The hostname and subdomain are essential to bind to the headless service
 
 # The DNS records will be created of the following form:
-# mysql-pod.mysql-h.default.svc.cluster.local
+#   mysql-pod.mysql-h.default.svc.cluster.local
+#   mysql-pod.mysql-h.default.svc.cluster.local
+#   mysql-pod.mysql-h.default.svc.cluster.local
+
+# But that name will be created for all the Pods. So this is another example 
+# where Deployment cannot be used and so we have to use StatefulSet instead.
+
+ 
+ 
 
