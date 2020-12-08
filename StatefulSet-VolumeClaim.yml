@@ -23,7 +23,7 @@ spec:
        - mountPath: /var/lib/mysql
          name: data-volume
 # Copy and Paste from PVC Definition file
-volumeClaimTemplate:
+volumeClaimTemplates:
  - metadata:
   name: myclaim
  spec:
