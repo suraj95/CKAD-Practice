@@ -6,8 +6,11 @@ metadata:
   app: myapp
 spec:
  containers:
-  - name: mysql
+  - name: mysql 
     image: mysql
+    command: [ "sleep" ]  # Just sleep forever (to prevent CrashLoopBackOff)
+    args: [ "infinity" ]
+
  subdomain: mysql-h
  hostname: mysql-pod
  

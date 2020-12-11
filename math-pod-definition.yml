@@ -6,9 +6,12 @@ spec:
  containers:
   - name: math-add
     image: ubuntu
-    command: ['expr','3','+','2']
+    command: ['expr','3','+','2'] #logs will store result 5
 
  restartPolicy: Never 
 
  # "Always" is the default property by which the Pod always recreates the container when it exits
  # We can override this default behavior and set it to "Never"
+
+ # Check logs with the following command: 
+ # kubectl logs myapp-pod
